@@ -1,4 +1,3 @@
-
 # Class Methods
 # Your Parking Garage class should implement the following methods:
 
@@ -33,28 +32,33 @@ class ParkingGarage:
         pass
     
     def payForParking(self):
-        pass
+        user_input = ('please enter payment amouunt and enter [purchase] ')
+        if user_input == 'purchase':
+          self.current_ticket = ticket = [True]
     
     def leaveGarage(self):
         pass
     
     def viewTicket(self):
-        pass
+        print(self.current_ticket)
         
         
 def driver():
     while True:
-          response = input('Would you like to, [a]Purchase a ticket, , or [b]Leave the garage [c]view your ticket')
+          response = input('Would you like to, [a]Purchase a ticket, [b]view your ticket, or [c]Leave the garage')
         
           if response.lower() == 'a':
             my_ticket.takeTicket()
-          elif response.lower() == '':
-            my_ticket.payForParking()
-          elif response.lower() == 'b':
+            
+          # elif response.lower() == '':
+          #   my_ticket.payForParking()
+            
+          elif response.lower() == 'c':
             my_ticket.leaveGarage()
             print('Thank You for Visiting, Have A Great day!')
             break
-          elif response.lower() == 'c':
+        
+          elif response.lower() == 'b':
             my_ticket.viewTicket()
             
 my_ticket = ParkingGarage([], [], {})
