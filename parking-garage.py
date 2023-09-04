@@ -32,9 +32,10 @@ class ParkingGarage:
         pass
     
     def payForParking(self):
-        pay_ticket = input ("please enter payment amouunt and enter [purchase] ").lower()
+        pay_ticket = input ("please enter payment and enter [purchase] ").lower()
         if pay_ticket == 'purchase':
-          self.current_ticket = ['Paid'] [True]
+            self.current_ticket["Paid"] = True
+        print(self.current_ticket)
     
     def leaveGarage(self):
         pass
@@ -49,7 +50,7 @@ def driver():
              response = input("Pay, Enter, View, or exit? ")
         
              if response.lower() == 'view':
-               my_ticket.displayTicket()
+               my_ticket.viewTicket()
                break
              elif response.lower() == 'pay':
                my_ticket.payForParking()
